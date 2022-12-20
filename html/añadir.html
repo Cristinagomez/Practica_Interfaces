@@ -59,6 +59,12 @@
                   <input type="text" id="peso" name="peso" placeholder="Peso">
                 </div>
                 <div class="row">
+                  <div class="row" id="añadido"></div>
+                  <br>
+                  <button type="button" class ="boton" onclick="añadir()">+</button>
+                
+                </div>
+                <div class="row">
                   <label for="total">Total"</label>
                   <input type="text" id="total" name="total" placeholder="Total">
                 </div>
@@ -76,6 +82,43 @@
         <h4>Cristina Gómez Campos</h4>
         <h4>2022</h4>
     </div>
+    <script>
+     
+
+      function añadir(){
+        var espacio = document.getElementById("añadido");
+        var campo = document.createElement("label");
+        campo.innerText = "Artículo";
+        var campoI = document.createElement("input");
+        campoI.type = "text";
+        campoI.id = "articulo";
+        campoI.name = "articulo";
+        campoI.placeholder = "Artículo";
+        var campo2 = document.createElement("label");
+        campo2.innerText = "Precio por kg";
+        var campoII = document.createElement("input");
+        campoII.type = "text";
+        campoII.id = "preciokg";
+        campoII.name = "preciokg";
+        campoII.placeholder = "Precio por kg";
+        var campo3 = document.createElement("label");
+        campo3.innerText = "Peso";
+        var campoIII = document.createElement("input");
+        campoIII.type = "text";
+        campoIII.id = "cantidad";
+        campoIII.name = "cantidad";
+        campoIII.placeholder = "Cantidad";
+        espacio.appendChild(campo);
+        espacio.appendChild(campoI);
+        espacio.appendChild(campo2);
+        espacio.appendChild(campoII);
+        espacio.appendChild(campo3);
+        espacio.appendChild(campoIII);
+        
+        
+
+      }
+    </script>
 </body>
 </html>
 
