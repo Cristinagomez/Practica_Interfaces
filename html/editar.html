@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+    <link rel="stylesheet" href="../css/añadir_editar.css">
+</head>
+<body>
+    <div class="header">
+        <p>Gestor de tickets</p>
+      </div>
+    <div class="topnav">
+        <a href="../index.html">Inicio</a>
+        <a href="lista.html">Lista de tickets</a>
+        <a href="añadir.html">Añadir ticket</a>
+        <a href="buscar.html">Buscar productos</a>
+        
+    </div>
+    <div class="card">
+        <h2 id="textoCentrado">Editar ticket</h2>
+        <div class="marco">
+          <form>
+            <div class="row">
+              <label for="fecha">Fecha</label>
+              <input type="date" id="fecha" name="fecha" placeholder="Your name..">
+            </div>
+            <div class="row">
+              <label for="tienda">Tienda</label>
+              <select id="tienda" name="tienda">
+                <option value="">Sin seleccionar</option>
+                <option value="carrefour">Carrefour</option>
+                <option value="dia">Dia</option>
+                <option value="ahorramas">Ahorramas</option>
+                <option value="lidl">Lidl</option>
+                <option value="aldi">Aldi</option>
+                <option value="alcampo">Alcampo</option>
+              </select>
+            </div>
+            <div class="row">
+              <label for="articulo">Artículo</label>
+              <input type="text" id="articulo" name="articulo" placeholder="Artículo">
+            </div>
+            <div class="row">
+              <label for="preciounit">Precio por unidad</label>
+              <input type="text" id="preciounit" name="preciounit" placeholder="Precio por unidad">
+            </div>
+            <div class="row">
+              <label for="cantidad">Cantidad</label>
+              <input type="text" id="cantidad" name="cantidad" placeholder="Cantidad">
+            </div>
+            <div class="row">
+              <label for="preciokg">Precio por kg</label>
+              <input type="text" id="preciokg" name="preciokg" placeholder="Precio por kg">
+            </div>
+            <div class="row">
+              <label for="peso">Peso</label>
+              <input type="text" id="peso" name="peso" placeholder="Peso">
+            </div>
+            <div class="row">
+              <label for="total">Total"</label>
+              <input type="text" id="total" name="total" placeholder="Total">
+            </div>
+            
+              <br>
+            <div class="row">
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Vaciar">
+            </div>
+        </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h4>Cristina Gómez Campos</h4>
+        <h4>2022</h4>
+    </div>
+</body>
+</html>
+

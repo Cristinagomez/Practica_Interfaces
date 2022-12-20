@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    background: rgb(252, 248, 232);
+  }
+  
+  /* Cabecera */
+  .header {
+    padding: 1px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(252, 248, 232);
+    text-decoration: solid;
+    background-image: url(../img/portada.jpg);
+  }
+  
+  .header h1 {
+    font-size: 60px;
+  }
+
+  .header h3 {
+    font-size: 30px;
+  }
+  
+  /* NavBar*/
+  .topnav {
+    overflow: hidden;
+    background-color: rgb(235, 100, 64);
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: rgb(8, 8, 8);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  
+  .topnav a:hover {
+    background-color: rgb(206, 229, 208);
+    color: rgb(235, 100, 64);
+  }
+
+  
+  /* Columna izquierda*/
+  .leftcolumn {   
+    float: left;
+    width: 59%;
+  }
+  
+  /* Columna derecha */
+  .rightcolumn {
+    float: left;
+    width: 41%;
+    background-color: rgb(252, 248, 232);
+    padding-left: 20px;
+  }
+  
+  /* Fondo elementos */
+  .marco {
+    background-color:rgb(148, 180, 159);
+    width: 100%;
+    padding: 20px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  
+  /* Caja de contenidos */
+  .card {
+    background-color: rgb(206, 229, 208);
+    padding: 20px;
+    margin-top: 20px;
+    color: rgb(8, 8, 8);
+    font-weight: bold;
+    
+  }
+
+  #textoCentrado {
+    text-align: center;
+  }
+
+  
+  .boton {
+    background-color: rgb(235, 100, 64);
+    border: none;
+    border-radius: 3px;
+    padding: 15px 32px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    margin-top: 1%;
+    
+  }
+  .boton a {
+    color:  rgb(8, 8, 8);
+  }
+
+  .boton a:hover {
+    color:  rgb(206, 229, 208);
+  }
+
+  .boton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .boton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .boton:hover span {
+    padding-right: 25px;
+  }
+  
+  .boton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+ 
+ 
+  /* Footer */
+  .footer {
+    padding: 1px;
+    text-align: center;
+    color: rgb(8, 8, 8);
+    background:  rgb(235, 100, 64);
+    margin-top: 20px;
+  }
+  
+  /* Responsive*/
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+    .topnav a {
+        float: none;
+        width: 100%;
+      }
+  }
+  
+  /* Responsive*/
+  @media screen and (max-width: 400px) {
+    .topnav a {
+      float: none;
+      width: 100%;
+    }
+  }
