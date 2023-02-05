@@ -16,7 +16,7 @@
     text-align: center;
     color: rgb(252, 248, 232);
     text-decoration: solid;
-    background-image: url(../img/portada.jpg);
+    background-image: url(/portada.jpg);
   }
   
   .header h1 {
@@ -70,36 +70,13 @@
   #textoCentrado {
     text-align: center;
   }
-   /* Columna izquierda*/
-  .leftcolumn {   
-    float: left;
-    width: 40%;
-  }
-  
-  /* Columna derecha */
-  .rightcolumn {
-    float: left;
-    width: 60%;
-    background-color: rgb(252, 248, 232);
-    padding-left: 20px;
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  .card img{
-    height: auto;
-    width: 100%;
-  }
 
-  /*Tabla*/
+/*Tabla*/
   table {
     border-collapse: collapse;
-    height: auto;
-    width: 100%;
+    width: 70%;
+    margin-left: 15%;
+   
   }
 
   th {
@@ -116,6 +93,28 @@
     background-color: rgb(252, 248, 232);
   }
 
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /*Canpo de búsqueda*/
+  input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid rgb(8, 8, 8);
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: rgb(255,255,255);
+    background-image: url('/buscar.jpg');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    background-size: 3%;
+    padding: 12px 20px 12px 40px;
+  }
+  
   /* Footer */
   .footer {
     padding: 1px;
@@ -141,13 +140,15 @@
     }
   }
   
+ 
   @media screen and (max-width: 400px) {
     .topnav a {
       float: none;
       width: 100%;
     }
     table {
-      display: block;
-      overflow-x: auto;
-    }
+       display: block;
+       overflow-x: auto;
+     }
   }
+

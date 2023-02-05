@@ -16,7 +16,7 @@
     text-align: center;
     color: rgb(252, 248, 232);
     text-decoration: solid;
-    background-image: url(../img/portada.jpg);
+    background-image: url(/portada.jpg);
   }
   
   .header h1 {
@@ -47,15 +47,41 @@
     background-color: rgb(206, 229, 208);
     color: rgb(235, 100, 64);
   }
-  
 
+  
+  /* Columna izquierda*/
+  .leftcolumn {   
+    float: left;
+    width: 59%;
+  }
+  
+  /* Columna derecha */
+  .rightcolumn {
+    float: left;
+    width: 41%;
+    background-color: rgb(252, 248, 232);
+    padding-left: 20px;
+  }
   
   /* Fondo elementos */
   .marco {
-    background-color: rgb(148, 180, 159);
+    background-color:rgb(148, 180, 159);
     width: 100%;
     padding: 20px;
   }
+
+  .marco2 {
+    background-color:rgb(148, 180, 159);
+    width: 93.5%;
+    padding: 20px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
   
   /* Caja de contenidos */
   .card {
@@ -71,50 +97,52 @@
     text-align: center;
   }
 
-/*Tabla*/
-  table {
-    border-collapse: collapse;
-    width: 70%;
-    margin-left: 15%;
-   
-  }
-
-  th {
-    background-color:   rgb(235, 100, 64);
-    color: rgb(8, 8, 8);
-  }
-  th, td {
-    padding: 8px;
+  
+  .boton {
+    background-color: rgb(235, 100, 64);
+    border: none;
+    border-radius: 3px;
+    padding: 15px 32px;
     text-align: center;
-    border-bottom: 1px solid rgb(148, 180, 159);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    margin-top: 1%;
+    
+  }
+  .boton a {
+    color:  rgb(8, 8, 8);
   }
 
-  td {
-    background-color: rgb(252, 248, 232);
+  .boton a:hover {
+    color:  rgb(206, 229, 208);
   }
 
-
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  /*Canpo de búsqueda*/
-  input[type=text] {
-    width: 100%;
-    box-sizing: border-box;
-    border: 2px solid rgb(8, 8, 8);
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: rgb(255,255,255);
-    background-image: url('../img/buscar.jpg');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    background-size: 3%;
-    padding: 12px 20px 12px 40px;
+  .boton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
   }
   
+  .boton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .boton:hover span {
+    padding-right: 25px;
+  }
+  
+  .boton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+ 
+ 
   /* Footer */
   .footer {
     padding: 1px;
@@ -133,22 +161,13 @@
     .topnav a {
         float: none;
         width: 100%;
-    }
-    table {
-      display: block;
-      overflow-x: auto;
-    }
+      }
   }
   
- 
+  /* Responsive*/
   @media screen and (max-width: 400px) {
     .topnav a {
       float: none;
       width: 100%;
     }
-    table {
-       display: block;
-       overflow-x: auto;
-     }
   }
-
