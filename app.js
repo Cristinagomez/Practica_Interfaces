@@ -16,40 +16,34 @@ const server = http.createServer(function (req, res) {
             r = res.end();
 			return r;
 		});
-	} else if(req.url === '/anadir.html'){
+	} else if(req.url === '/anadir.html' || req.url === '/anadir'){
 		console.log('url : ', req.url);
 		fs.readFile('./anadir.html', function(err, data) {
 			res.writeHead(200, {'Content-Type': 'text/html'});
 			res.write(data);
 			return res.end();
 		});
-	} else if(req.url === '/buscar.html'){
+	} else if(req.url === '/buscar.html'|| req.url === '/buscar'){
 		console.log('url : ', req.url);
 		fs.readFile('./buscar.html', function(err, data) {
 			res.writeHead(200, {'Content-Type': 'text/html'});
 			res.write(data);
 			return res.end();
 		});
-	} else if(req.url === '/consultar.html'){
+	} else if(req.url === '/consultar.html'|| req.url === '/consultar'){
 		console.log('url : ', req.url);
 		fs.readFile('./consultar.html', function(err, data) {
 			res.writeHead(200, {'Content-Type': 'text/html'});
 			res.write(data);
 			return res.end();
 		});
-	} else if(req.url === '/editar.html'){
+	} else if(req.url === '/editar.html'|| req.url === '/editar'){
 		fs.readFile('./editar.html', function(err, data) {
 			res.writeHead(200, {'Content-Type': 'text/html'});
 			res.write(data);
 			return res.end();
 		});
-    } else if(req.url === '/grafico.html'){
-		fs.readFile('./grafico.html', function(err, data) {
-			res.writeHead(200, {'Content-Type': 'text/html'});
-			res.write(data);
-			return res.end();
-		});
-    } else if(req.url === '/lista.html'){
+    } else if(req.url === '/lista.html' || req.url === '/lista'){
 		fs.readFile('./lista.html', function(err, data) {
 			res.writeHead(200, {'Content-Type': 'text/html'});
 			res.write(data);
@@ -145,7 +139,25 @@ const server = http.createServer(function (req, res) {
 		res.write(data);
 		return res.end();
 		});
-	
+	} else if(req.url === '/ticket.buscar.js'){
+		console.log('url : ', req.url);
+		fs.readFile('./ticket.buscar.js', function(err, data) {
+			res.writeHead(200, {'Content-Type': 'text/javascript'});
+			res.write(data);
+			return res.end();
+		});
+	} else if(req.url === '/ticket.store.js'){
+		fs.readFile('ticket.store.js', function(err, data) {
+			res.writeHead(200, {'Content-Type': 'text/javascript'});
+			res.write(data);
+			return res.end();
+		});
+	} else if(req.url === '/form.js'){
+		fs.readFile('form.js', function(err, data) {
+			res.writeHead(200, {'Content-Type': 'text/javascript'});
+			res.write(data);
+			return res.end();
+		});
     } else {
 		res.statusCode = 404;
 		res.end();

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscador</title>
     <link rel="stylesheet" href="/buscar.css">
+    <script type="module" src="ticket.store.js"></script>
+    <script type="module" src="form.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
    
 </head>
 <body>
@@ -23,41 +26,34 @@
       <div class="card">
         <div class="marco">
             <h1 id="textoCentrado">Búsqueda por artículo</h1>
-            <form>
-                <input type="text" name="buscar" placeholder="Buscar..">
-            </form>
-            <br>
-            <table>
-                <tr>
-                <th>Artículo</th>
-                <th></th>
-                </tr>
-                <tr>
-                <td>Tomate</td>
-                <td><a href="/grafico.html">Ver gráfico</a></td>
-                </tr>
-                <tr>
-                <td>Pan</td>
-                <td>Ver gráfico</td>
-                </tr>
-                <tr>
-                <td>Harina</td>
-                <td>Ver gráfico</td>
-                </tr>
-                <tr>
-                <td>Lechuga</td>
-                <td>Ver gráfico</td>
-                </tr>
-            </table>
+            <div>
+                <input type="text" id=id-textoBuscar name="buscar" placeholder="Buscar..">
+                <button id="id-botonBuscar1" style="font-size:larger">&#128270;</button>
+                <button id="id-botonBuscar2" style="font-size:larger">&#128200;</button>
+            </div>
+           
+           
         </div>
       </div>
+
+      <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <h2 id="textoCentrado">Resultados</h2>
+                    <div class="marco">
+                        <div id="id-resultados"></div>
+                        <canvas id="id-grafico"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>    
       <div class="card">
             <div class="marco">
                 <h1 id="textoCentrado">Categorías</h1>
                 <div class="responsive">
                     <div class="gallery">
-                    <a  href="/grafico.html">
-                        <img src="/tomates.jpg" alt="Cinque Terre" width="600" height="400">
+                    <a href="#">
+                        <img src="/tomates.jpg" id="tomates" alt="Tomates" width="600" height="400">
                     </a>
                     <div class="desc">Tomate</div>
                     </div>
@@ -66,8 +62,8 @@
                 
                 <div class="responsive">
                     <div class="gallery">
-                    <a  href="#">
-                        <img src="/pan.jpg" alt="Forest" width="600" height="400">
+                    <a href="#">
+                        <img src="/pan.jpg" id="pan" alt="Pan" width="600" height="400">
                     </a>
                     <div class="desc">Pan</div>
                     </div>
@@ -76,18 +72,18 @@
                 <div class="responsive">
                     <div class="gallery">
                     <a  href="#">
-                        <img src="/harina.jpg" alt="Northern Lights" width="600" height="400">
+                        <img src="/lechuga.jpg" id="lechuga" alt="Lechuga" width="600" height="400">
                     </a>
-                    <div class="desc">Harina</div>
+                    <div class="desc">Lechuga</div>
                     </div>
                 </div>
                 
                 <div class="responsive">
                     <div class="gallery">
                     <a href="#">
-                        <img src="/lechuga.jpg" alt="Mountains" width="600" height="400">
+                        <img src="/harina.jpg"  id="harina" alt="Harina" width="600" height="400">
                     </a>
-                    <div class="desc">Lechuga</div>
+                    <div class="desc">Harina</div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -99,4 +95,5 @@
         <h4>2022</h4>
       </div>
 </body>
+<script type="module" src="ticket.buscar.js"></script>
 </html>
