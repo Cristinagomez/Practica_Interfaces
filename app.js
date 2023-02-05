@@ -146,6 +146,13 @@ const server = http.createServer(function (req, res) {
 			res.write(data);
 			return res.end();
 		});
+	} else if(req.url === '/ticket.lista.js'){
+		console.log('url : ', req.url);
+		fs.readFile('./ticket.lista.js', function(err, data) {
+			res.writeHead(200, {'Content-Type': 'text/javascript'});
+			res.write(data);
+			return res.end();
+		});
 	} else if(req.url === '/ticket.store.js'){
 		fs.readFile('ticket.store.js', function(err, data) {
 			res.writeHead(200, {'Content-Type': 'text/javascript'});
