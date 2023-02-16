@@ -138,6 +138,9 @@ export function ticketForm(ticketID, elemID) {
 	// Añadir boton edicion
 	let divHeaderBotonE2 = document.createElement('DIV');
 	divHeaderBotonE2.innerHTML = 'SALVAR';
+    divHeaderBotonE2.style.color= "white";
+    divHeaderBotonE2.style.backgroundColor= "rgb(235, 100, 64)";
+    divHeaderBotonE2.style.border= "1px solid rgb(8, 8, 8)";
 	divHeaderInput.appendChild(divHeaderBotonE2);
 	divHeaderBotonE2.setAttribute('class', 'ticketHeaderInterior');
 	divHeaderBotonE2.setAttribute('id-ticket', ticket.id);
@@ -145,8 +148,7 @@ export function ticketForm(ticketID, elemID) {
     // formatear el header para que los div sean contiguos
     divTicketId2.setAttribute("class", "ticketHeaderInterior prueba");	
     divTicketId2.setAttribute("style", "color:black");
-    //divHeaderInputFecha2.setAttribute("type", "date");	
-    // divHeaderInputFecha2.setAttribute("placeholder", "yyyy/mm/dd");
+   
     divHeaderInputTienda2.setAttribute("class", "ticketHeaderInterior");
     divHeaderInputTienda2.setAttribute("style", "color:black");
 	divHeaderInputFecha2.setAttribute("class", "ticketHeaderInterior");
@@ -200,18 +202,52 @@ export function ticketForm(ticketID, elemID) {
             let b_salvar = document.createElement('BUTTON');
             let b_borrar = document.createElement('BUTTON');
 
-            b_editar.textContent = "E";
-            b_restaurar.textContent = "R";
-            b_salvar.textContent = "S";
-            b_borrar.textContent = "B";
+            b_editar.textContent = "Editar";
+            b_restaurar.textContent = "Restaurar";
+            b_salvar.textContent = "Salvar";
+            b_borrar.textContent = "Borrar";
 
             b_editar.addEventListener('click', editarHandler);
             b_restaurar.addEventListener('click', restaurarHandler);
             b_salvar.addEventListener('click', salvarHandler);
             b_borrar.addEventListener('click', borrarHandler);
         
-            b_salvar.setAttribute("id-art", a.id )
-            b_salvar.setAttribute("id-ticket-art", ticket.id )
+            b_salvar.setAttribute("id-art", a.id);
+            b_salvar.setAttribute("id-ticket-art", ticket.id);
+
+
+
+            /*Dar estilo a los botones*/
+            b_salvar.style.backgroundColor= "rgb(235, 100, 64)";
+            b_salvar.style.border= "1px solid rgb(8, 8, 8)";
+            b_salvar.style.padding= "10px";
+            b_salvar.style.borderRadius= "20px";
+            b_salvar.style.color= "white";
+            b_salvar.style.margin= "3px";
+
+            b_borrar.style.backgroundColor= "rgb(235, 100, 64)";
+            b_borrar.style.border= "1px solid rgb(8, 8, 8)";
+            b_borrar.style.padding= "10px";
+            b_borrar.style.borderRadius= "20px";
+            b_borrar.style.color= "white";
+            b_borrar.style.margin= "3px";
+
+            b_restaurar.style.backgroundColor= "rgb(235, 100, 64)";
+            b_restaurar.style.border= "1px solid rgb(8, 8, 8)";
+            b_restaurar.style.padding= "10px";
+            b_restaurar.style.borderRadius= "20px";
+            b_restaurar.style.color= "white";
+            b_restaurar.style.margin= "3px";
+
+            b_editar.style.backgroundColor= "rgb(235, 100, 64)";
+            b_editar.style.border= "1px solid rgb(8, 8, 8)";
+            b_editar.style.padding= "10px";
+            b_editar.style.borderRadius= "20px";
+            b_editar.style.color= "white";
+            b_editar.style.margin= "3px";
+          
+
+      
 
             divArticulo.appendChild(b_editar);
             divArticulo.appendChild(b_restaurar);
@@ -246,6 +282,7 @@ export function ticketForm(ticketID, elemID) {
     let b_siguiente = document.createElement('BUTTON');
     b_siguiente.textContent = `SIGUIENTE ${navRes.siguiente}`;
     b_siguiente.setAttribute('id-siguiente', `${navRes.siguiente}`);
+    
     // Botón anterior
     let divBotonAnterior = document.createElement("DIV");	
     let b_anterior = document.createElement('BUTTON');
@@ -261,6 +298,8 @@ export function ticketForm(ticketID, elemID) {
     }
  
     divCuerpo.appendChild(divNavegacion);
+
+    
 }
 // Manejador del boton editar del ticket
 function editarTicketHandler(e){
@@ -325,7 +364,6 @@ function nuevoArticuloHandler(e){
     let divNuevoArticulo = document.createElement('DIV');
     divNuevoArticulo.setAttribute("class", "articulo");
     let divDelBoton = e.currentTarget.parentNode;
-    divNuevoArticulo.style.border="2px solid black";
     let divAbueloDelDivDelBoton = e.currentTarget.parentNode.parentNode;
     divAbueloDelDivDelBoton.insertBefore(divNuevoArticulo, divDelBoton);
 

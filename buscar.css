@@ -2,106 +2,116 @@
     box-sizing: border-box;
   }
   
-  body {
-    font-family: 'Courier New', Courier, monospace;
-    padding: 10px;
-    background: rgb(252, 248, 232);
-  }
-  
-  /* Cabecera */
-  .header {
-    padding: 1px;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    color: rgb(252, 248, 232);
-    text-decoration: solid;
-    background-image: url(/portada.jpg);
-  }
-  
-  .header h1 {
-    font-size: 60px;
-  }
+body {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 10px;
+  background: rgb(252, 248, 232);
+}
 
-  .header h3 {
-    font-size: 30px;
-  }
-  
-  /* NavBar*/
-  .topnav {
-    overflow: hidden;
-    background-color: rgb(235, 100, 64);
-  }
-  
-  .topnav a {
-    float: left;
-    display: block;
-    color: rgb(8, 8, 8);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  
-  .topnav a:hover {
-    background-color: rgb(206, 229, 208);
-    color: rgb(235, 100, 64);
-  }
-  
-  /*Canpo de búsqueda*/
-  input[type=text] {
-    width: 100%;
-    box-sizing: border-box;
-    border: 2px solid rgb(8, 8, 8);
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: rgb(255,255,255);
-    background-image: url('/buscar.jpg');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    background-size: 3%;
-    padding: 12px 20px 12px 40px;
-  }
-  
-  /* Fondo elementos */
-  .marco {
-    background-color: rgb(148, 180, 159);
-    width: 100%;
-    padding: 20px;
-    border-radius: 20px;
-  }
-  
-  /* Caja de contenidos */
-  .card {
-    background-color: rgb(206, 229, 208);
-    padding: 20px;
-    margin-top: 20px;
-    color: rgb(8, 8, 8);
-    font-weight: bold;
-    
-  }
+/* Cabecera */
+.header {
+  padding: 1px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(252, 248, 232);
+  text-decoration: solid;
+  background-image: url(/portada.jpg);
+}
 
-  #textoCentrado {
-    text-align: center;
-  }
+.header h1 {
+  font-size: 60px;
+}
 
+.header h3 {
+  font-size: 30px;
+}
+
+/* NavBar*/
+.topnav {
+  overflow: hidden;
+  background-color: rgb(235, 100, 64);
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: rgb(8, 8, 8);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.topnav a:hover {
+  background-color: rgb(206, 229, 208);
+  color: rgb(235, 100, 64);
+}
+
+button{
+  background-color:  rgb(235, 100, 64);
+  border: 1px solid rgb(8, 8, 8);
+  padding: 10px;
+  border-radius:  20px;
+  color: white;
+  margin: 3px;
+}
+
+/*Canpo de búsqueda*/
+input[type=text] {
+  width: 50%;
+  margin-left: 20%;
+  box-sizing: border-box;
+  border: 2px solid rgb(8, 8, 8);
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: rgb(255,255,255);
+  background-image: url('/buscar.jpg');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  background-size: 5%;
+  padding: 12px 20px 12px 40px;
+}
+
+/* Fondo elementos */
+.marco {
+  background-color: rgb(148, 180, 159);
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* Caja de contenidos */
+.card {
+  background-color: rgb(206, 229, 208);
+  padding: 20px;
+  margin-top: 20px;
+  color: rgb(8, 8, 8);
+  font-weight: bold;
   
-  #id-grafico{
-   
-    width:100%;
-    max-width:800px;
-    margin: auto;
-    
-  }
+}
 
-  .draw {
-    display: inline;
-    padding:10px;
-    margin: 3px;
-    border-radius:3px;
-    border: 1px solid rgb(235, 100, 64);
-	  font-weight: bold;
-    background: rgb(252, 248, 232);
+#textoCentrado {
+  text-align: center;
+}
+
+
+#id-grafico{
+  
+  width:100%;
+  max-width:800px;
+  margin: auto;
+  
+}
+
+.draw {
+  display: inline;
+  padding:10px;
+  margin: 3px;
+  border-radius:3px;
+  border: 1px solid rgb(235, 100, 64);
+  font-weight: bold;
+  background: rgb(252, 248, 232);
 }
 
 .ticket {
@@ -162,98 +172,98 @@
 }
 
 
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-  /*Galería de imágenes*/
-  div.gallery {
-    border: 1px solid rgb(8, 8, 8);
-    color:  rgb(8, 8, 8);
-    text-decoration: solid;
-  }
-  
-  
-  div.gallery img {
+/*Galería de imágenes*/
+div.gallery {
+  border: 1px solid rgb(8, 8, 8);
+  color:  rgb(8, 8, 8);
+  text-decoration: solid;
+}
+
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+img{
+  width: 600px; 
+  height: 400px;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Footer */
+.footer {
+  padding: 1px;
+  text-align: center;
+  color: rgb(8, 8, 8);
+  background:  rgb(235, 100, 64);
+  margin-top: 20px;
+}
+
+/* Responsive*/
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
     width: 100%;
-    height: auto;
+    padding: 0;
   }
-  
-  div.desc {
-    padding: 15px;
-    text-align: center;
-  }
-  
-  .responsive {
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
-  }
-
-  img{
-    width: 600px; 
-    height: 400px;
-  }
-
-  .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  
-  /* Footer */
-  .footer {
-    padding: 1px;
-    text-align: center;
-    color: rgb(8, 8, 8);
-    background:  rgb(235, 100, 64);
-    margin-top: 20px;
-  }
-  
-  /* Responsive*/
-  @media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {   
-      width: 100%;
-      padding: 0;
-    }
-    .topnav a {
-        float: none;
-        width: 100%;
-      }
-  }
-  
-  /* Responsive*/
-  @media screen and (max-width: 400px) {
-    .topnav a {
+  .topnav a {
       float: none;
       width: 100%;
     }
-    table {
-      display: block;
-      overflow-x: auto;
-    }
+}
+
+/* Responsive*/
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
   }
-  
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
 @media only screen and (max-width: 700px) {
-    .responsive {
-      width: 49.99999%;
-      margin: 6px 0;
-    }
-    table {
-      display: block;
-      overflow-x: auto;
-    }
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
   }
-  
-  @media only screen and (max-width: 500px) {
-    .responsive {
-      width: 100%;
-    }
-    table {
-      display: block;
-      overflow-x: auto;
-    }
+  table {
+    display: block;
+    overflow-x: auto;
   }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}

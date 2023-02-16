@@ -2,75 +2,75 @@
     box-sizing: border-box;
   }
   
-  body {
-    font-family: 'Courier New', Courier, monospace;
-    padding: 10px;
-    background: rgb(252, 248, 232);
-  }
-  
-  /* Cabecera */
-  .header {
-    padding: 1px;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    color: rgb(252, 248, 232);
-    text-decoration: solid;
-    background-image: url(/portada.jpg);
-  }
-  
-  .header h1 {
-    font-size: 60px;
-  }
+body {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 10px;
+  background: rgb(252, 248, 232);
+}
 
-  .header h3 {
-    font-size: 30px;
-  }
-  
+/* Cabecera */
+.header {
+  padding: 1px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(252, 248, 232);
+  text-decoration: solid;
+  background-image: url(/portada.jpg);
+}
 
-  /* NavBar*/
-  .topnav {
-    overflow: hidden;
-    background-color: rgb(235, 100, 64);
-  }
-  
-  .topnav a {
-    float: left;
-    display: block;
-    color: rgb(8, 8, 8);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  
-  .topnav a:hover {
-    background-color: rgb(206, 229, 208);
-    color: rgb(235, 100, 64);
-  }
+.header h1 {
+  font-size: 60px;
+}
 
-  /* Fondo elementos */
-  .marco {
-    background-color: rgb(148, 180, 159);
-    width: 70%;
-    padding: 20px;
-    margin-left: 15%;
-    border-radius: 20px;
-  }
-  
-  /* Caja de contenidos */
-  .card {
-    background-color: rgb(206, 229, 208);
-    padding: 20px;
-    margin-top: 20px;
-    color: rgb(8, 8, 8);
-    font-weight: bold;
-    
-  }
+.header h3 {
+  font-size: 30px;
+}
 
-  #textoCentrado {
-    text-align: center;
-  }
+
+/* NavBar*/
+.topnav {
+  overflow: hidden;
+  background-color: rgb(235, 100, 64);
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: rgb(8, 8, 8);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.topnav a:hover {
+  background-color: rgb(206, 229, 208);
+  color: rgb(235, 100, 64);
+}
+
+/* Fondo elementos */
+.marco {
+  background-color: rgb(148, 180, 159);
+  width: 80%;
+  padding: 20px;
+  margin-left: 10%;
+  border-radius: 20px;
+}
+
+/* Caja de contenidos */
+.card {
+  background-color: rgb(206, 229, 208);
+  padding: 20px;
+  margin-top: 20px;
+  color: rgb(8, 8, 8);
+  font-weight: bold;
+  
+}
+
+#textoCentrado {
+  text-align: center;
+}
 
 
 
@@ -80,20 +80,20 @@
     margin: 15px;
     border-radius:3px;
     border: 1px solid rgb(8, 8, 8);
-	font-weight: bold;
+	  font-weight: bold;
     background: rgb(148, 180, 159);;
 }
 
 .ticket {
     padding:10px;
-	margin: 10px;
+	  margin: 10px;
     border: 1px solid rgb(8, 8, 8);;
     border-radius: 20px;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
     background : rgb(206, 229, 208);
     color: rgb(8, 8, 8);;
-	font-weight: bold;
-	font-size: 16px;
+	  font-weight: bold;
+	  font-size: 16px;
     font-size:15px;
 }
 
@@ -102,7 +102,7 @@
     font: 10px;
     padding:10px;
     border-radius: 20px;
-    border-bottom: 1px solid rgb(8, 8, 8);; 
+    border: 1px solid rgb(8, 8, 8);
     background : rgb(148, 180, 159);
 }
 
@@ -127,46 +127,46 @@
 
   
   
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Footer */
+.footer {
+  padding: 1px;
+  text-align: center;
+  color:  rgb(8, 8, 8);
+  background:  rgb(235, 100, 64);
+  margin-top: 20px;
+}
+
+/* Responsive*/
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
   }
-  
-  
-  /* Footer */
-  .footer {
-    padding: 1px;
-    text-align: center;
-    color:  rgb(8, 8, 8);
-    background:  rgb(235, 100, 64);
-    margin-top: 20px;
-  }
-  
-  /* Responsive*/
-  @media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {   
-      width: 100%;
-      padding: 0;
-    }
-    .topnav a {
-        float: none;
-        width: 100%;
-    }
-    .marco {
-      display: block;
-      overflow-x: auto;
-    }
-  }
-  
-  /* Responsive*/
-  @media screen and (max-width: 400px) {
-    .topnav a {
+  .topnav a {
       float: none;
       width: 100%;
-    }
-    .marco {
-      display: block;
-      overflow-x: auto;
-    }
   }
+  .marco {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Responsive*/
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+  .marco {
+    display: block;
+    overflow-x: auto;
+  }
+}
