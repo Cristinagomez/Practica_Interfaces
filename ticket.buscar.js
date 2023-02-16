@@ -7,7 +7,15 @@ function buscar1(){
     let texto = input.value;
     let reslist = ts.searchArticulo(texto);
     let resDiv = document.getElementById("id-resultados");
-    
+    reslist.sort((a,b) =>{
+        let camposA = a.fecha.split("-");
+        let fechaA = new Date(parseInt(camposA[2]),parseInt(camposA[1]) - 1,parseInt(camposA[0]));
+        let camposB = b.fecha.split("-");
+        let fechaB = new Date(parseInt(camposB[2]),parseInt(camposB[1]) - 1,parseInt(camposB[0]));
+        if(fechaA < fechaB) return 1;
+        else if(fechaA > fechaB) return -1;
+        else return 0;
+    })
 
     resDiv.innerHTML="";
     

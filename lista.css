@@ -53,8 +53,10 @@
   /* Fondo elementos */
   .marco {
     background-color: rgb(148, 180, 159);
-    width: 100%;
+    width: 80%;
     padding: 20px;
+    margin-left: 10%;
+    border-radius: 20px;
   }
   
   /* Caja de contenidos */
@@ -84,8 +86,10 @@
 .ticket {
     padding:10px;
 	  margin: 10px;
+    margin-left: 5%;
+    width: 90%;
     border: 1px solid rgb(235, 100, 64);
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
     background : rgb(206, 229, 208);
     color: rgb(235, 100, 64);
@@ -98,6 +102,7 @@
     display : inline;
     font: 10px;
     padding:10px;
+    
 }
 
 .ticketHeaderInterior {
@@ -159,7 +164,34 @@
     background-size: 3%;
     padding: 12px 20px 12px 40px;
   }
-  
+
+  #textobuscar {
+    text-align: center;
+    color: rgb(235, 100, 64);
+  }
+  #textobuscar select{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+	  width: 10%;
+	  cursor: pointer;
+  	padding: 7px 10px;
+	  background: rgb(206, 229, 208);
+	  color: rgb(235, 100, 64);
+    text-align: center;
+	  font-size: 20px;
+	  border:2px solid rgb(235, 100, 64);
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.25s ease;
+  }
+  #textobuscar select:hover{
+    background: rgb(206, 229, 208);
+  }
+
+  #textobuscar select::-ms-expand {
+    display: none;
+  }
   /* Footer */
   .footer {
     padding: 1px;

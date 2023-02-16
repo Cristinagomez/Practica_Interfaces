@@ -29,8 +29,17 @@ export class TicketStore {
 	constructor (){
 		this.next_ticket_id = 0;
 		this.next_articulo_id = 0;
-		this.ticketList = [];
+	
+		//this.ticketList = [];
+		let tList = localStorage.TICKETS;
+		if(tList != undefined){
+			this.ticketList =JSON.parse(tList);
+		} else{
+			this.ticketList = [];
+		}	
 	}
+
+
 	// Interna.
 	// Contiene el siguiente id de ticket
 	init() {
@@ -66,6 +75,16 @@ export class TicketStore {
 		console.log('      -------------------------------------------------------');
 	}
 	
+	/*
+		Grabar los tickets a localStorage
+		
+	*/
+	exportToLocalStorage(){
+		localStorage.TICKETS = JSON.stringify(this.ticketList);
+	}
+
+
+
 
 	/*
 		Obtener todos los tickets en formato JSON
@@ -87,7 +106,7 @@ export class TicketStore {
 	*/
 	loadJSON(texto) {
 		this.ticketList = JSON.parse(texto);
-		this.ticketList = JSON.parse(texto);
+		//this.ticketList = JSON.parse(texto);
         
 		// Buscar el id más alto de ticket y de articulo.
 		// 
@@ -128,7 +147,7 @@ export class TicketStore {
         console.log('Buscar : ', texto, ' en ', this.ticketList.length, ' tickets');
         let rList = [];
         for(const t of this.ticketList){
-            console.log('   ticket : ', JSON.stringify(t));
+            //console.log('   ticket : ', JSON.stringify(t));
             let found = false;
             for(const a of t.articuloList){
                 if(a.nombre.includes(texto)){
@@ -184,7 +203,12 @@ export class TicketStore {
 	*/
 	getTicket(id) {
 		// TODO: corregir
-		let t = ticketList[id];
+		// *** ERROR: let t = this.ticketList[id];
+		console.log(`getTicket(${id})`);
+		let t = this.ticketList.find(tAux => {
+			return tAux.id == id;
+		});
+
 		return t;
 	}
 
@@ -333,4 +357,3 @@ export class TicketStore {
 }
 
 console.log('cargado ticket.store.js');
-

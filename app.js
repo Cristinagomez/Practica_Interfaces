@@ -49,8 +49,14 @@ const server = http.createServer(function (req, res) {
 			res.write(data);
 			return res.end();
 		});
-    } else if(req.url === '/anadir_editar.css'){
-		fs.readFile('./anadir_editar.css', function(err, data) {
+    } else if(req.url === '/anadir.css'){
+		fs.readFile('./anadir.css', function(err, data) {
+			res.writeHead(200, {'Content-Type': 'text/css'});
+			res.write(data);
+			return res.end();
+		});
+	} else if(req.url === '/editar.css'){
+		fs.readFile('./editar.css', function(err, data) {
 			res.writeHead(200, {'Content-Type': 'text/css'});
 			res.write(data);
 			return res.end();
@@ -73,8 +79,8 @@ const server = http.createServer(function (req, res) {
 		res.write(data);
 		return res.end();
 		});
-	} else if(req.url === '/lista_consulta.css'){
-	fs.readFile('./lista_consulta.css', function(err, data) {
+	} else if(req.url === '/lista.css'){
+	fs.readFile('./lista.css', function(err, data) {
 		res.writeHead(200, {'Content-Type': 'text/css'});
 		res.write(data);
 		return res.end();
@@ -161,6 +167,12 @@ const server = http.createServer(function (req, res) {
 		});
 	} else if(req.url === '/form.js'){
 		fs.readFile('form.js', function(err, data) {
+			res.writeHead(200, {'Content-Type': 'text/javascript'});
+			res.write(data);
+			return res.end();
+		});
+	} else if(req.url === '/editar.js'){
+		fs.readFile('editar.js', function(err, data) {
 			res.writeHead(200, {'Content-Type': 'text/javascript'});
 			res.write(data);
 			return res.end();

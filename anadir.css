@@ -27,6 +27,7 @@
     font-size: 30px;
   }
   
+
   /* NavBar*/
   .topnav {
     overflow: hidden;
@@ -48,42 +49,14 @@
     color: rgb(235, 100, 64);
   }
 
-  
-  /* Columna izquierda*/
-  .leftcolumn {   
-    float: left;
-    width: 59%;
-  }
-  
-  /* Columna derecha */
-  .rightcolumn {
-    float: left;
-    width: 41%;
-    background-color: rgb(252, 248, 232);
-    padding-left: 20px;
-  }
-  
   /* Fondo elementos */
   .marco {
-    background-color:rgb(148, 180, 159);
-    width: 100%;
+    background-color: rgb(148, 180, 159);
+    width: 70%;
     padding: 20px;
+    margin-left: 15%;
     border-radius: 20px;
   }
-
-  .marco2 {
-    background-color:rgb(148, 180, 159);
-    width: 93.5%;
-    padding: 20px;
-    border-radius: 20px;
-  }
-
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
   
   /* Caja de contenidos */
   .card {
@@ -99,57 +72,93 @@
     text-align: center;
   }
 
+  /* Campos de introducción de datos*/
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(8, 8, 8);
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  /* Etiqueta*/
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
   
-  .boton {
+   /* Botón submit*/
+  input[type=submit] {
     background-color: rgb(235, 100, 64);
+    color: rgb(8, 8, 8);
+    padding: 12px 20px;
     border: none;
-    border-radius: 3px;
-    padding: 15px 32px;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 17px;
-    margin-top: 1%;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-right: 10%;
+  }
+  
+  input[type=submit]:hover {
+    background-color:rgb(252, 248, 232);
+    color:  rgb(148, 180, 159);
     
   }
-  .boton a {
-    color:  rgb(8, 8, 8);
-  }
 
-  .boton a:hover {
-    color:  rgb(206, 229, 208);
-  }
-
-  .boton span {
+  /* Botón vaciar*/
+  input[type=reset] {
+    background-color: rgb(235, 100, 64);
+    color: rgb(8, 8, 8);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
+    float: right;
+    margin-right: 10%;
+  }
+
+  input[type=reset]:hover {
+    background-color:rgb(252, 248, 232);
+    color:  rgb(148, 180, 159);
   }
   
-  .boton span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
+  .boton{
+    background-color: rgb(235, 100, 64);
+    color: rgb(8, 8, 8);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+  }
+
+/* Columnas del formulario*/
+  .columna1 {
+    float: left;
+    width: 30%;
+    margin-top: 6px;
+    color: rgb(8, 8, 8);
   }
   
-  .boton:hover span {
-    padding-right: 25px;
+  .columna2 {
+    float: left;
+    width: 70%;
+    margin-top: 6px;
   }
   
-  .boton:hover span:after {
-    opacity: 1;
-    right: 0;
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
- 
- 
+  
+  
   /* Footer */
   .footer {
     padding: 1px;
     text-align: center;
-    color: rgb(8, 8, 8);
+    color:  rgb(8, 8, 8);
     background:  rgb(235, 100, 64);
     margin-top: 20px;
   }
@@ -163,7 +172,11 @@
     .topnav a {
         float: none;
         width: 100%;
-      }
+    }
+    .marco {
+      display: block;
+      overflow-x: auto;
+    }
   }
   
   /* Responsive*/
@@ -171,5 +184,9 @@
     .topnav a {
       float: none;
       width: 100%;
+    }
+    .marco {
+      display: block;
+      overflow-x: auto;
     }
   }
