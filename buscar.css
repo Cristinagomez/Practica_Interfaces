@@ -164,12 +164,7 @@ input[type=text] {
 	border-radius : 2px;
 	margin:10px;
 }
-.articulo {
-	display : block;
-	padding : 10px;
-	margin:10px;
-	color:black;
-}
+
 
 
 .row:after {
@@ -178,18 +173,7 @@ input[type=text] {
   clear: both;
 }
 
-/*Galería de imágenes*/
-div.gallery {
-  border: 1px solid rgb(8, 8, 8);
-  color:  rgb(8, 8, 8);
-  text-decoration: solid;
-}
 
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
 
 div.desc {
   padding: 15px;

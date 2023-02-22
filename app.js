@@ -91,42 +91,13 @@ const server = http.createServer(function (req, res) {
 			res.write(data);
 			return res.end();
 		});
-    } else if(req.url === '/frutas.jpg'){
-		fs.readFile('./frutas.jpg', function(err, data) {
-			res.writeHead(200, {'Content-Type': 'image/x-icon'});
-			res.write(data);
-			return res.end();
-		});
 	} else if(req.url === '/barras.jpg'){
 	fs.readFile('./barras.jpg', function(err, data) {
 		res.writeHead(200, {'Content-Type': 'image/x-icon'});
 		res.write(data);
 		return res.end();
 		});
-	} else if(req.url === '/gra_tomate.png'){
-	fs.readFile('./gra_tomate.png', function(err, data) {
-		res.writeHead(200, {'Content-Type': 'image/x-icon'});
-		res.write(data);
-		return res.end();
-		});
-	} else if(req.url === '/harina.jpg'){
-	fs.readFile('./harina.jpg', function(err, data) {
-		res.writeHead(200, {'Content-Type': 'image/x-icon'});
-		res.write(data);
-		return res.end();
-		});
-	} else if(req.url === '/lechuga.jpg'){
-	fs.readFile('./lechuga.jpg', function(err, data) {
-		res.writeHead(200, {'Content-Type': 'image/x-icon'});
-		res.write(data);
-		return res.end();
-		});
-	} else if(req.url === '/pan.jpg'){
-	fs.readFile('./pan.jpg', function(err, data) {
-		res.writeHead(200, {'Content-Type': 'image/x-icon'});
-		res.write(data);
-		return res.end();
-	});
+
 	} else if(req.url === '/portada.jpg'){
 	fs.readFile('./portada.jpg', function(err, data) {
 		res.writeHead(200, {'Content-Type': 'image/x-icon'});
@@ -173,6 +144,12 @@ const server = http.createServer(function (req, res) {
 		});
 	} else if(req.url === '/editar.js'){
 		fs.readFile('editar.js', function(err, data) {
+			res.writeHead(200, {'Content-Type': 'text/javascript'});
+			res.write(data);
+			return res.end();
+		});
+	} else if(req.url === '/anadir.js'){
+		fs.readFile('anadir.js', function(err, data) {
 			res.writeHead(200, {'Content-Type': 'text/javascript'});
 			res.write(data);
 			return res.end();

@@ -1,92 +1,6 @@
 import {Articulo, Ticket, TicketStore} from "./ticket.store.js"
 
-//*******************************************************
 
-let ticketsJSON_todos = `
-
-[
-{ "id" : " 1 ", "tienda" : "LIDL" , "fecha" :  "08/01/2023" , 		"articuloList":[{"nombre" :  "Pan barra 2" , "cantidad" : " 0.400 ", "precio" : " 0.700 "}]},
-{ "id" : " 2 ", "tienda" : "MERCADONA" , "fecha" :  "3/1/2023" , 	"articuloList":[{"nombre" :  "Pan barra 3" , "cantidad" : " 0.750 ", "precio" : " 1.150 "}]},
-{ "id" : " 3 ", "tienda" : "MERCADONA" , "fecha" :  "7/1/2023" , 	"articuloList":[{"nombre" :  "Tomate canario" , "cantidad" : " 1.212 ", "precio" : " 1.720 "}]},
-{ "id" : " 4 ", "tienda" : "MERCADONA" , "fecha" :  "12/12/2022" , 	"articuloList":[{"nombre" :  "Pan barra 3" , "cantidad" : " 0.750 ", "precio" : " 1.200 "}]},
-{ "id" : " 5 ", "tienda" : "MERCADONA" , "fecha" :  "16/12/2022" , 	"articuloList":[{"nombre" :  "Pate tarrina" , "cantidad" : " 0.100 ", "precio" : " 0.600 "}]},
-{ "id" : " 6 ", "tienda" : "LIDL" , "fecha" :  "16/12/2022" , 		"articuloList":[{"nombre" :  "Pan barra 2" , "cantidad" : " 0.400 ", "precio" : " 0.700 "}]},
-{ "id" : " 7 ", "tienda" : "LIDL" , "fecha" :  "18/12/2022" , 		"articuloList":[{"nombre" :  "Tomate canario" , "cantidad" : " 1.000 ", "precio" : " 1.690 "}]},
-{ "id" : " 8 ", "tienda" : "MERCADONA" , "fecha" :  "19/12/2022" , 	"articuloList":[{"nombre" :  "Pan barra 3" , "cantidad" : " 0.750 ", "precio" : " 1.200 "}]},
-{ "id" : " 9 ", "tienda" : "ALDI" , "fecha" :  "29/12/2022" , 		"articuloList":[{"nombre" :  "Tomate ensalada" , "cantidad" : " 1.590 ", "precio" : " 1.714 "}]},
-{ "id" : " 10 ", "tienda" : "MERCADONA" , "fecha" :  "31/12/2022" , "articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.250 ", "precio" : " 0.500 "}]},
-{ "id" : " 11 ", "tienda" : "MERCADONA" , "fecha" :  "3/12/2022" , 	"articuloList":[{"nombre" :  "Tomate ensalada" , "cantidad" : " 1.012 ", "precio" : " 2.190 "}]},
-{ "id" : " 12 ", "tienda" : "ALDI" , "fecha" :  "6/12/2022" , 		"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.250 ", "precio" : " 0.460 "}]},
-{ "id" : " 13 ", "tienda" : "MERCADONA" , "fecha" :  "7/12/2022" , 	"articuloList":[{"nombre" :  "Tomate canario" , "cantidad" : " 0.798 ", "precio" : " 1.790 "}]},
-{ "id" : " 14 ", "tienda" : "MERCADONA" , "fecha" :  "31/5/2022" , 	"articuloList":[{"nombre" :  "Pate tarrina" , "cantidad" : " 0.100 ", "precio" : " 0.550 "}]},
-{ "id" : " 15 ", "tienda" : "LIDL" , "fecha" :  "29/5/2022" , 		"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.200 ", "precio" : " 0.420 "}]},
-{ "id" : " 16 ", "tienda" : "ALDI" , "fecha" :  "24/5/2022" , 		"articuloList":[{"nombre" :  "Tomate ensalada" , "cantidad" : " 1.138 ", "precio" : " 1.490 "}]},
-{ "id" : " 17 ", "tienda" : "ALDI" , "fecha" :  "24/5/2022" , 		"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.250 ", "precio" : " 0.420 "}]},
-{ "id" : " 18 ", "tienda" : "ALDI" , "fecha" :  "21/5/2022" , 		"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.250 ", "precio" : " 0.370 "}]},
-{ "id" : " 19 ", "tienda" : "LIDL" , "fecha" :  "19/5/2022" , 		"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.200 ", "precio" : " 0.420 "}]},
-{ "id" : " 20 ", "tienda" : "LIDL" , "fecha" :  "11/5/2022" , 		"articuloList":[{"nombre" :  "Pan barra" ,        "cantidad" : " 0.200 ", "precio" : " 0.420 "}]},
-{ "id" : " 21 ", "tienda" : "MERCADONA" , "fecha" :  "9/5/2022" , 	"articuloList":[{"nombre" :  "Pate tarrina" ,      "cantidad" : " 0.100 ", "precio" : " 0.550 "}]},
-{ "id" : " 22 ", "tienda" : "LIDL" , "fecha" :  "6/5/2022" , 		"articuloList":[{"nombre" :  "Pan barra" ,         "cantidad" : " 0.200 ", "precio" : " 0.370 "}]},
-{ "id" : " 23 ", "tienda" : "LIDL" , "fecha" :  "17/1/2022" , 		"articuloList":[{"nombre" :  "Pan barra" ,        "cantidad" : " 0.200 ", "precio" : " 0.350 "}]},
-{ "id" : " 24 ", "tienda" : "LIDL" , "fecha" :  "16/1/2022" , 		"articuloList":[{"nombre" :  "Pan barra" ,        "cantidad" : " 0.200 ", "precio" : " 0.350 "}]},
-{ "id" : " 25 ", "tienda" : "LIDL" , "fecha" :  "4/3/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 0.990 "}]},
-{ "id" : " 26 ", "tienda" : "MERCADONA" , "fecha" :  "19/3/2022" , 	"articuloList":[{"nombre" :  "Pan barra" ,        "cantidad" : " 0.250 ", "precio" : " 0.450 "}]},
-{ "id" : " 27 ", "tienda" : "LIDL" , "fecha" :  "23/3/2022" , 		"articuloList":[{"nombre" :  "Pan barra" ,        "cantidad" : " 0.200 ", "precio" : " 0.370 "}]},
-{ "id" : " 28 ", "tienda" : "LIDL" , "fecha" :  "27/3/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" ,  "cantidad" : " 1.000 ", "precio" : " 0.990 "}]},
-{ "id" : " 29 ", "tienda" : "LIDL" , "fecha" :  "20/4/2022" , 		"articuloList":[{"nombre" :  "Pan barra" ,        "cantidad" : " 0.200 ", "precio" : " 0.370 "}]},
-{ "id" : " 30 ", "tienda" : "LIDL" , "fecha" :  "3/4/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 1.190 "}]},
-{ "id" : " 31 ", "tienda" : "ALDI" , "fecha" :  "16/4/2022" , 		"articuloList":[{"nombre" :  "Tomate ensalada" , "cantidad" : " 1.300 ", "precio" : " 1.990 "}]},
-{ "id" : " 32 ", "tienda" : "LIDL" , "fecha" :  "25/4/2022" , 		"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.200 ", "precio" : " 0.370 "}]},
-{ "id" : " 33 ", "tienda" : "LIDL" , "fecha" :  "8/1/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 1.390 "}]},
-{ "id" : " 34 ", "tienda" : "LIDL" , "fecha" :  "31/10/2022" , 		"articuloList":[{"nombre" :  "Tomate pera" , "cantidad" : " 0.434 ", "precio" : " 1.890 "}]},
-{ "id" : " 35 ", "tienda" : "LIDL" , "fecha" :  "29/10/2022" , 		"articuloList":[{"nombre" :  "Pan barra 2" , "cantidad" : " 0.250 ", "precio" : " 0.700 "}]},
-{ "id" : " 36 ", "tienda" : "ALDI" , "fecha" :  "30/10/2022" , 		"articuloList":[{"nombre" :  "Tomate pera" , "cantidad" : " 0.444 ", "precio" : " 1.990 "}]},
-{ "id" : " 37 ", "tienda" : "LIDL" , "fecha" :  "27/10/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 1.290 "}]},
-{ "id" : " 38 ", "tienda" : "ALDI" , "fecha" :  "24/10/2022" , 		"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.250 ", "precio" : " 0.440 "}]},
-{ "id" : " 39 ", "tienda" : "MERCADONA" , "fecha" :  "25/10/2022" , "articuloList":[{"nombre" :  "Pate tarrina" , "cantidad" : " 0.100 ", "precio" : " 0.550 "}]},
-{ "id" : " 40 ", "tienda" : "LIDL" , "fecha" :  "23/10/2022" , 		"articuloList":[{"nombre" :  "Tomate canario" , "cantidad" : " 1.000 ", "precio" : " 1.690 "}]},
-{ "id" : " 41 ", "tienda" : "LIDL" , "fecha" :  "23/10/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 1.290 "}]},
-{ "id" : " 42 ", "tienda" : "LIDL" , "fecha" :  "20/10/2022" , 		"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.200 ", "precio" : " 0.440 "}]},
-{ "id" : " 43 ", "tienda" : "ALDI" , "fecha" :  "16/10/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 1.250 "}]},
-{ "id" : " 44 ", "tienda" : "MERCADONA" , "fecha" :  "15/10/2022" , "articuloList":[{"nombre" :  "Pate tarrina" , "cantidad" : " 0.100 ", "precio" : " 0.550 "}]},
-{ "id" : " 45 ", "tienda" : "MERCADONA" , "fecha" :  "14/10/2022" , "articuloList":[{"nombre" :  "Tomate ensalada" , "cantidad" : " 0.866 ", "precio" : " 2.090 "}]},
-{ "id" : " 46 ", "tienda" : "MERCADONA" , "fecha" :  "13/10/2022" , "articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.250 ", "precio" : " 0.450 "}]},
-{ "id" : " 47 ", "tienda" : "LIDL" , "fecha" :  "8/10/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 1.250 "}]},
-{ "id" : " 48 ", "tienda" : "MERCADONA" , "fecha" :  "11/10/2022" , "articuloList":[{"nombre" :  "Tomate ensalada" , "cantidad" : " 0.404 ", "precio" : " 1.990 "}]},
-{ "id" : " 49 ", "tienda" : "ALDI" , "fecha" :  "9/10/2022" , 		"articuloList":[{"nombre" :  "Tomate ensalada" , "cantidad" : " 0.392 ", "precio" : " 2.090 "}]},
-{ "id" : " 50 ", "tienda" : "MERCADONA" , "fecha" :  "6/10/2022" , 	"articuloList":[{"nombre" :  "Pate tarrina" , "cantidad" : " 0.100 ", "precio" : " 0.550 "}]},
-{ "id" : " 51 ", "tienda" : "MERCADONA" , "fecha" :  "5/10/2022" , 	"articuloList":[{"nombre" :  "Tomate ensalada" , "cantidad" : " 0.480 ", "precio" : " 1.990 "}]},
-{ "id" : " 52 ", "tienda" : "MERCADONA" , "fecha" :  "4/10/2022" , 	"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.250 ", "precio" : " 0.450 "}]},
-{ "id" : " 53 ", "tienda" : "LIDL" , "fecha" :  "3/10/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 1.250 "}]},
-{ "id" : " 54 ", "tienda" : "ALDI" , "fecha" :  "9/1/2023" , 		"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.250 ", "precio" : " 0.470 "}]},
-{ "id" : " 55 ", "tienda" : "ALDI" , "fecha" :  "1/11/2022" , 		"articuloList":[{"nombre" :  "Tomate ensalada" , "cantidad" : " 0.712 ", "precio" : " 2.190 "}]},
-{ "id" : " 56 ", "tienda" : "ALDI" , "fecha" :  "2/11/2022" , 		"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.250 ", "precio" : " 0.440 "}]},
-{ "id" : " 57 ", "tienda" : "MERCADONA" , "fecha" :  "5/11/2022" , 	"articuloList":[{"nombre" :  "Tomate ensalada" , "cantidad" : " 0.416 ", "precio" : " 2.190 "}]},
-{ "id" : " 58 ", "tienda" : "LIDL" , "fecha" :  "6/11/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 1.250 "}]},
-{ "id" : " 59 ", "tienda" : "MERCADONA" , "fecha" :  "8/11/2022" , 	"articuloList":[{"nombre" :  "Tomate pera" , "cantidad" : " 1.062 ", "precio" : " 1.890 "}]},
-{ "id" : " 60 ", "tienda" : "LIDL" , "fecha" :  "9/11/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 1.290 "}]},
-{ "id" : " 61 ", "tienda" : "MERCADONA" , "fecha" :  "18/11/2022" , "articuloList":[{"nombre" :  "Pate tarrina" , "cantidad" : " 0.100 ", "precio" : " 0.600 "}]},
-{ "id" : " 62 ", "tienda" : "MERCADONA" , "fecha" :  "18/11/2022" , "articuloList":[{"nombre" :  "Pan barra 3" , "cantidad" : " 0.750 ", "precio" : " 1.100 "}]},
-{ "id" : " 63 ", "tienda" : "MERCADONA" , "fecha" :  "17/11/2022" , "articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.250 ", "precio" : " 0.450 "}]},
-{ "id" : " 64 ", "tienda" : "LIDL" , "fecha" :  "13/11/2022" , 	    "articuloList":[{"nombre" :  "Pan barra 2" , "cantidad" : " 0.500 ", "precio" : " 0.700 "}]},
-{ "id" : " 65 ", "tienda" : "ALDI" , "fecha" :  "15/11/2022" , 	    "articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 1.250 "}]},
-{ "id" : " 66 ", "tienda" : "MERCADONA" , "fecha" :  "15/11/2022" , "articuloList":[{"nombre" :  "Pate tarrina" , "cantidad" : " 0.100 ", "precio" : " 0.550 "}]},
-{ "id" : " 67 ", "tienda" : "MERCADONA" , "fecha" :  "19/11/2022" , "articuloList":[{"nombre" :  "Tomate canario" , "cantidad" : " 1.354 ", "precio" : " 0.990 "}]},
-{ "id" : " 68 ", "tienda" : "MERCADONA" , "fecha" :  "12/11/2022" , "articuloList":[{"nombre" :  "Tomate canario" , "cantidad" : " 1.314 ", "precio" : " 1.490 "}]},
-{ "id" : " 69 ", "tienda" : "MERCADONA" , "fecha" :  "12/11/2022" , "articuloList":[{"nombre" :  "Pate tarrina" , "cantidad" : " 0.100 ", "precio" : " 0.550 "}]},
-{ "id" : " 70 ", "tienda" : "MERCADONA" , "fecha" :  "23/11/2022" , "articuloList":[{"nombre" :  "Pate tarrina" , "cantidad" : " 0.100 ", "precio" : " 0.600 "}]},
-{ "id" : " 71 ", "tienda" : "MERCADONA" , "fecha" :  "4/11/2023" , 	"articuloList":[{"nombre" :  "Pan barra 3" , "cantidad" : " 0.750 ", "precio" : " 1.100 "}]},
-{ "id" : " 72 ", "tienda" : "MERCADONA" , "fecha" :  "23/11/2022" , "articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.250 ", "precio" : " 0.450 "}]},
-{ "id" : " 73 ", "tienda" : "ALDI" , "fecha" :  "23/11/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 1.250 "}]},
-{ "id" : " 74 ", "tienda" : "MERCADONA" , "fecha" :  "26/11/2022" , "articuloList":[{"nombre" :  "Tomate canario" , "cantidad" : " 1.634 ", "precio" : " 1.290 "}]},
-{ "id" : " 75 ", "tienda" : "MERCADONA" , "fecha" :  "25/11/2022" , "articuloList":[{"nombre" :  "Pate tarrina" , "cantidad" : " 0.100 ", "precio" : " 0.600 "}]},
-{ "id" : " 76 ", "tienda" : "LIDL" , "fecha" :  "26/11/2022" , 		"articuloList":[{"nombre" :  "Yogur natural 8" , "cantidad" : " 1.000 ", "precio" : " 1.290 "}]},
-{ "id" : " 77 ", "tienda" : "ALDI" , "fecha" :  "24/11/2022" , 		"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.250 ", "precio" : " 0.460 "}]},
-{ "id" : " 78 ", "tienda" : "LIDL" , "fecha" :  "29/11/2022" , 		"articuloList":[{"nombre" :  "Pan barra" , "cantidad" : " 0.200 ", "precio" : " 0.440 "}]},
-{ "id" : " 79 ", "tienda" : "MERCADONA" , "fecha" :  "30/11/2022" , "articuloList":[{"nombre" :  "Pan barra 3" , "cantidad" : " 0.750 ", "precio" : " 1.200 "}]},
-{ "id" : " 80 ", "tienda" : "MERCADONA" , "fecha" :  "30/11/2022" , "articuloList":[{"nombre" :  "Pate tarrina" , "cantidad" : " 0.100 ", "precio" : " 0.600 "}]}
-]
-`;
 
 
 
@@ -127,6 +41,7 @@ export function ticketForm(ticketID, elemID) {
     divForm.appendChild(divHeaderInput);
 
     let divTicketId2 = document.createElement('div');
+    divTicketId2.id="id";
     divTicketId2.innerHTML = ticket.id;
 
 	let divHeaderInputTienda2 = document.createElement('input');
@@ -136,7 +51,7 @@ export function ticketForm(ticketID, elemID) {
 	divHeaderInput.appendChild(divHeaderInputTienda2);
 	
 	// Añadir boton edicion
-	let divHeaderBotonE2 = document.createElement('DIV');
+	let divHeaderBotonE2 = document.createElement('BUTTON');
 	divHeaderBotonE2.innerHTML = 'SALVAR';
     divHeaderBotonE2.style.color= "white";
     divHeaderBotonE2.style.backgroundColor= "rgb(235, 100, 64)";
@@ -171,10 +86,11 @@ export function ticketForm(ticketID, elemID) {
 		p.textContent = "NO TIENE ARTICULOS";
 		formTicket.appendChild(p);
 	} else {
+        var orden = 0;
 		for (const a of ticket.articuloList){
 			let divArticulo = document.createElement("DIV");
 			divArticulo.setAttribute("class", "articulo");
-            
+            orden = parseInt(orden) + 1;
 			
 		    let d_nombre = document.createElement('INPUT');
 			let d_cantidad = document.createElement('INPUT');
@@ -197,22 +113,21 @@ export function ticketForm(ticketID, elemID) {
 			divArticulo.appendChild(d_precio);
             // Añadir los botones para gestionar el articulo
 
-            let b_editar = document.createElement('BUTTON');
-            let b_restaurar = document.createElement('BUTTON');
+          
             let b_salvar = document.createElement('BUTTON');
             let b_borrar = document.createElement('BUTTON');
 
-            b_editar.textContent = "Editar";
-            b_restaurar.textContent = "Restaurar";
+           
             b_salvar.textContent = "Salvar";
             b_borrar.textContent = "Borrar";
 
-            b_editar.addEventListener('click', editarHandler);
-            b_restaurar.addEventListener('click', restaurarHandler);
+            b_borrar.setAttribute("orden",orden);
+            
             b_salvar.addEventListener('click', salvarHandler);
-            b_borrar.addEventListener('click', borrarHandler);
+            b_borrar.addEventListener('click', borrarArticulo);
         
             b_salvar.setAttribute("id-art", a.id);
+            b_salvar.id = "salvar";
             b_salvar.setAttribute("id-ticket-art", ticket.id);
 
 
@@ -231,26 +146,7 @@ export function ticketForm(ticketID, elemID) {
             b_borrar.style.borderRadius= "20px";
             b_borrar.style.color= "white";
             b_borrar.style.margin= "3px";
-
-            b_restaurar.style.backgroundColor= "rgb(235, 100, 64)";
-            b_restaurar.style.border= "1px solid rgb(8, 8, 8)";
-            b_restaurar.style.padding= "10px";
-            b_restaurar.style.borderRadius= "20px";
-            b_restaurar.style.color= "white";
-            b_restaurar.style.margin= "3px";
-
-            b_editar.style.backgroundColor= "rgb(235, 100, 64)";
-            b_editar.style.border= "1px solid rgb(8, 8, 8)";
-            b_editar.style.padding= "10px";
-            b_editar.style.borderRadius= "20px";
-            b_editar.style.color= "white";
-            b_editar.style.margin= "3px";
-          
-
-      
-
-            divArticulo.appendChild(b_editar);
-            divArticulo.appendChild(b_restaurar);
+ 
             divArticulo.appendChild(b_salvar);
             divArticulo.appendChild(b_borrar);
 
@@ -261,8 +157,15 @@ export function ticketForm(ticketID, elemID) {
 	}
     // Boton para añadir un artículo.
     let divBotonNuevoArticulo = document.createElement("DIV");
-    divBotonNuevoArticulo.classList.add('articulo')
+    divBotonNuevoArticulo.classList.add('articulo');
+    divBotonNuevoArticulo.style.marginLeft= "42%";
     let b_nuevoArticulo = document.createElement('BUTTON');
+    b_nuevoArticulo.style.backgroundColor= "rgb(235, 100, 64)";
+    b_nuevoArticulo.style.border= "1px solid rgb(8, 8, 8)";
+    b_nuevoArticulo.style.padding= "10px";
+    b_nuevoArticulo.style.borderRadius= "20px";
+    b_nuevoArticulo.style.color= "white";
+    b_nuevoArticulo.style.margin= "3px";
     b_nuevoArticulo.textContent = 'NUEVO ARTICULO';
     divBotonNuevoArticulo.appendChild(b_nuevoArticulo);
     divCuerpo.appendChild(divBotonNuevoArticulo);
@@ -277,15 +180,29 @@ export function ticketForm(ticketID, elemID) {
     let siguiente = navRes.siguiente;
 
     let divNavegacion = document.createElement("DIV");
+    divNavegacion.style.marginLeft= "40%";
+   
     // Botón siguiente
     let divBotonSiguiente = document.createElement("DIV");
     let b_siguiente = document.createElement('BUTTON');
+    b_siguiente.style.backgroundColor= "rgb(235, 100, 64)";
+    b_siguiente.style.border= "1px solid rgb(8, 8, 8)";
+    b_siguiente.style.padding= "10px";
+    b_siguiente.style.borderRadius= "20px";
+    b_siguiente.style.color= "white";
+    b_siguiente.style.margin= "3px";
     b_siguiente.textContent = `SIGUIENTE ${navRes.siguiente}`;
     b_siguiente.setAttribute('id-siguiente', `${navRes.siguiente}`);
     
     // Botón anterior
     let divBotonAnterior = document.createElement("DIV");	
     let b_anterior = document.createElement('BUTTON');
+    b_anterior.style.backgroundColor= "rgb(235, 100, 64)";
+    b_anterior.style.border= "1px solid rgb(8, 8, 8)";
+    b_anterior.style.padding= "10px";
+    b_anterior.style.borderRadius= "20px";
+    b_anterior.style.color= "white";
+    b_anterior.style.margin= "3px";
     b_anterior.textContent = `ANTERIOR ${navRes.anterior}`;
     b_anterior.setAttribute('id-anterior', `${navRes.anterior}`)
     divNavegacion.appendChild(b_anterior);
@@ -307,7 +224,7 @@ function editarTicketHandler(e){
 	let ticketID = elemBoton.getAttribute('id-ticket');
 	console.log(elemBoton)
     let divTicketHeader = elemBoton.parentNode.childNodes;
-    let id = divTicketHeader[0].textContent;
+    let id = divTicketHeader[0].textContent -1;
     let fecha = divTicketHeader[1].value;
     let tienda = divTicketHeader[2].value;
     
@@ -316,17 +233,15 @@ function editarTicketHandler(e){
     ticketList[id].tienda = tienda
     console.log("ID: " + id + "\nFECHA: " + fecha + "\nTIENDA:" + tienda);
     let ticketModificado = ticketList[id];
-    console.log("TICKET MODIFICADO \NTIENDA: " + ticketModificado.tienda + "\nFECHA: " + ticketModificado.fecha);
+    console.log("TICKET MODIFICADO TIENDA: " + ticketModificado.tienda + "\nFECHA: " + ticketModificado.fecha);
 
 	console.log(`ticket id = ${ticketID}`);
+    ts.exportToLocalStorage();
+    
 }
 
 // Manejadores de los botones
-function editarHandler(e){
 
-
-    console.log("editarHandler");
-}
 
 function restaurarHandler(e){
     console.log("restaurarHandler");
@@ -353,10 +268,23 @@ function salvarHandler(e){
     console.log("ID: "+ newIdArt +"\nNOMBRE: " + newNombreArt + "\nCANTIDAD: " + newCantidadArt + "\nPRECIO:" + newPrecioArt);
 
     console.log("salvarHandler");
+    ts.exportToLocalStorage();
 }
 
-function borrarHandler(e){
-    console.log("borrarHandler");
+function borrarArticulo(e){
+    let elemBoton = e.currentTarget;
+    let idArt = elemBoton.getAttribute("orden");
+    let pos = parseInt(idArt) -1;
+    let divDelBoton = e.currentTarget.parentNode.childNodes;
+    
+    let idticket = document.getElementById("id").innerHTML;
+    let ticket = ts.getTicket(idticket);
+    let art = ticket.articuloList[pos];
+
+    ticket.articuloList.splice(pos, 1);
+    
+    console.log(art);
+    ts.exportToLocalStorage();
 }
 
 function nuevoArticuloHandler(e){
@@ -377,20 +305,43 @@ function nuevoArticuloHandler(e){
     divNuevoArticulo.appendChild(d_cantidad);
     divNuevoArticulo.appendChild(d_precio);
 
-    let b_editar = document.createElement('BUTTON');
     let b_restaurar = document.createElement('BUTTON');
-    let b_salvar = document.createElement('BUTTON');
-    let b_borrar = document.createElement('BUTTON');
 
-    b_editar.textContent = "E";
-    b_restaurar.textContent = "R";
-    b_salvar.textContent = "S";
-    b_borrar.textContent = "B";
+    b_restaurar.textContent = "Guardar";
+    
 
-    divNuevoArticulo.appendChild(b_editar);
+    b_restaurar.style.backgroundColor= "rgb(235, 100, 64)";
+    b_restaurar.style.border= "1px solid rgb(8, 8, 8)";
+    b_restaurar.style.padding= "10px";
+    b_restaurar.style.borderRadius= "20px";
+    b_restaurar.style.color= "white";
+    b_restaurar.style.margin= "3px";
+
+ 
     divNuevoArticulo.appendChild(b_restaurar);
-    divNuevoArticulo.appendChild(b_salvar);
-    divNuevoArticulo.appendChild(b_borrar);
+    
+    b_restaurar.addEventListener("click", guardarArticulo);
+
+   
+}
+
+function guardarArticulo(e){
+   
+    let elemBoton = e.currentTarget;
+    let idticket = document.getElementById("id").innerHTML;
+    
+    
+    let inputsArticulo = elemBoton.parentNode.childNodes;
+    let nombreArt = inputsArticulo[0].value;
+    let cantidadArt = inputsArticulo[1].value;
+    let precioArt = inputsArticulo[2].value;
+
+
+    let ticket = ts.getTicket(idticket);
+    console.log(ticket)
+    ts.addArticuloToTicket(ticket,nombreArt,cantidadArt,precioArt);
+  
+    ts.exportToLocalStorage();
 }
 
 function siguienteHandler(e){
@@ -436,7 +387,7 @@ function navegacion(ticket){
 
 let ts = new TicketStore();
 
-ts.loadJSON(ticketsJSON_todos);
+
 
 let totalTickets = ts.size();
 

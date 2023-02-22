@@ -256,7 +256,8 @@ export class TicketStore {
 		this.next_articulo_id ++;
 		let a = new Articulo(this.next_articulo_id, nombreArticulo, cantidad, precio);
 		if (undefined != a){
-			let t = ticket.addArticulo(a);
+			//let t = ticket.addArticulo(a);
+			let t = ticket.articuloList.push(a);
 			if (null != t){
 				return a;
 			} else {

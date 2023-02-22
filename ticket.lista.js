@@ -3,7 +3,7 @@ import {drawForm, pintarForm, pintarRes} from "./form.js"
 
 
 
-let ts = new TicketStore();
+
 
 
 let ticketsJSON_todos = `
@@ -92,8 +92,15 @@ let ticketsJSON_todos = `
 ]
 `;
 
-ts.loadJSON(ticketsJSON_todos);
 
+let ts = new TicketStore();
+if(ts.size() <= 0){
+    console.log('No hay tickets. Se crean desde JSON')
+    ts.loadJSON(ticketsJSON_todos);
+    console.log('Se actualizan localStorage con los tickets')
+    ts.exportToLocalStorage();
+    console.assert(ts.size() > 0, "Error no se han cargado los tickets")
+}
 
 var ticketList = ts.listAllTicket();
 let lista = document.getElementById("lista");
