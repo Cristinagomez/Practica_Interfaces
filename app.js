@@ -154,6 +154,18 @@ const server = http.createServer(function (req, res) {
 			res.write(data);
 			return res.end();
 		});
+	} else if(req.url === '/index.js'){
+		fs.readFile('index.js', function(err, data) {
+			res.writeHead(200, {'Content-Type': 'text/javascript'});
+			res.write(data);
+			return res.end();
+		});
+	} else if(req.url === '/favicon.ico'){
+		fs.readFile('favicon.ico', function(err, data) {
+			res.writeHead(200, {'Content-Type': 'image/x-icon'});
+			res.write(data);
+			return res.end();
+		});
     } else {
 		res.statusCode = 404;
 		res.end();
