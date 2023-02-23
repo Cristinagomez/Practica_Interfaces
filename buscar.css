@@ -144,9 +144,8 @@ input[type=text] {
 }
 
 .ticketCuerpo {
-    height: 50px;
-    min-height : 50px;
-    max-height : 50px;
+  height: auto;
+
 }
 
 .abierto {

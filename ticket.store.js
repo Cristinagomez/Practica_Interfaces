@@ -36,7 +36,28 @@ export class TicketStore {
 			this.ticketList =JSON.parse(tList);
 		} else{
 			this.ticketList = [];
-		}	
+		}
+		let ticketMax = 0;
+		let articuloMax = 0;
+		for (const t of this.ticketList){
+			t.id = +t.id;
+			if(ticketMax < t.id){
+				ticketMax = t.id;
+			}
+			for(const a of t.articuloList){
+				if(a.hasOwnProperty('id')){
+					a.id = +a.id;
+				} else {
+					articuloMax ++;
+					a.id = articuloMax;
+				}
+				if(articuloMax < a.id){
+					articuloMax = a.id;
+				}
+			}
+		}
+		this.next_ticket_id = ticketMax;
+		this.next_articulo_id = articuloMax;	
 	}
 
 

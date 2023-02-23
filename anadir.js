@@ -18,7 +18,9 @@ function crear(){
 
  console.log(fecha + " " + tienda + " " + articulo + " " + cantidad + " " + precio);
 
+
  let ticket = ts.createTicket(tienda, fecha);
+ ts.addTicket(ticket);
  let art = ts.addArticuloToTicket(ticket,articulo,cantidad,precio);
  console.log(ticket);
  console.log(art);
