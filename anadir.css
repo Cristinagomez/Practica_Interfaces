@@ -87,8 +87,8 @@
     display: inline-block;
   }
   
-   /* Botón submit*/
-  input[type=submit] {
+   /* Botón crear*/
+  input[type=button] {
     background-color: rgb(235, 100, 64);
     color: rgb(8, 8, 8);
     padding: 12px 20px;
@@ -99,7 +99,7 @@
     margin-right: 10%;
   }
   
-  input[type=submit]:hover {
+  input[type=button]:hover {
     background-color:rgb(252, 248, 232);
     color:  rgb(148, 180, 159);
     
@@ -130,6 +130,14 @@
     border-radius: 4px;
     cursor: pointer;
     
+  }
+
+  input[type=number]{
+    width: 9%;
+    padding: 12px;
+    border: 1px solid rgb(8, 8, 8);
+    border-radius: 4px;
+    resize: vertical;
   }
 
 /* Columnas del formulario*/

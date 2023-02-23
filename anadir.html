@@ -26,19 +26,26 @@
         <div class="marco">
             <form>
                 <div class="row">
-                  <label for="fecha">Fecha</label>
-                  <input type="date" id="fecha" name="fecha" placeholder="Your name..">
+                  <label>Fecha</label>
+                  <br>
+                  <label for="dia">Dia</label>
+                  <input type="number" id="dia" name="dia" placeholder="00">
+                  <label for="mes">Mes</label>
+                  <input type="number" id="mes" name="mes" placeholder="00">
+                  <label for="año">Dia</label>
+                  <input type="number" id="año" name="año" placeholder="0000">
                 </div>
                 <div class="row">
                   <label for="tienda">Tienda</label>
                   <select id="tienda" name="tienda">
                     <option value="">Sin seleccionar</option>
-                    <option value="carrefour">Carrefour</option>
-                    <option value="dia">Dia</option>
-                    <option value="ahorramas">Ahorramas</option>
-                    <option value="lidl">Lidl</option>
-                    <option value="aldi">Aldi</option>
-                    <option value="alcampo">Alcampo</option>
+                    <option value="Carrefour">Carrefour</option>
+                    <option value="Dia">Dia</option>
+                    <option value="Ahorramas">Ahorramas</option>
+                    <option value="Lidl">Lidl</option>
+                    <option value="Aldi">Aldi</option>
+                    <option value="Alcampo">Alcampo</option>
+                    <option value="Mercadona">Mercadona</option>
                   </select>
                 </div>
                 <div class="row">
@@ -46,24 +53,20 @@
                   <input type="text" id="articulo" name="articulo" placeholder="Artículo">
                 </div>
                 <div class="row">
-                  <label for="preciounit">Precio</label>
-                  <input type="text" id="precio" name="precio" placeholder="Precio">
-                </div>
-                <div class="row">
                   <label for="cantidad">Cantidad</label>
                   <input type="text" id="cantidad" name="cantidad" placeholder="Cantidad">
                 </div>
                 <div class="row">
+                  <label for="preciounit">Precio</label>
+                  <input type="text" id="precio" name="precio" placeholder="Precio">
+                </div>
+                <div class="row">
                   <div class="row" id="añadido"></div>
-                  <br>
-                  <button id="añadir" type="button" class ="boton">+</button>
-                  <button id="eliminar" type="button" class ="boton">-</button>
-                
                 </div>
                 
                 <br>
                 <div class="row">
-                    <input type="submit" value="Enviar">
+                    <input type="button" id="crear" value="Crear ticket">
                     <input type="reset" value="Vaciar">
                 </div>
             </form>
